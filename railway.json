@@ -1,9 +1,18 @@
 {
   "$schema": "https://docs.railway.app/railway.schema.json",
   "build": {
-    "builder": "NIXPACKS"
-    // No "include" or "exclude" here for now, as "path" in services should handle it.
-    // If issues persist, we might add "exclude" patterns here.
+    "builder": "NIXPACKS",
+    "include": ["backend/"], // Explicitly only include the backend folder
+    "exclude": [ // Explicitly exclude known frontend/root-level files
+      "public/",
+      "src/",
+      "node_modules/",
+      "package.json",
+      "package-lock.json",
+      ".gitignore",
+      "README.md"
+      // Add any other root-level files that are part of your frontend
+    ]
   },
   "deploy": {
     "numReplicas": 1,
@@ -14,15 +23,14 @@
     }
   },
   "lifecycle": {
-    // Ensure these commands ONLY reference files within the 'backend' directory
-    "build": "cd backend && pip install -r requirements.txt",
-    "start": "cd backend && python main.py"
+    "build": "pip install -r backend/requirements.txt", 
+    "start": "python backend/main.py"                  
   },
   "projectId": "87b97f7b-28da-4e96-a99d-5c5d01e8ec8a", 
   "services": [
     {
       "name": "backend",
-      "path": "backend", // This tells Railway to build from the 'backend' folder
+      "path": "backend", 
       "type": "backend"
     }
   ]
