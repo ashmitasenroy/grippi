@@ -1,9 +1,26 @@
 {
+  "$schema": "https://docs.railway.app/railway.schema.json",
   "build": {
-    "env": "python",
-    "command": "pip install -r backend/requirements.txt"
+    "builder": "NIXPACKS"
   },
-  "start": {
-    "command": "python backend/main.py"
-  }
+  "deploy": {
+    "numReplicas": 1,
+    "healthcheckPath": "/",
+    "restartPolicy": {
+      "maxRetries": 3,
+      "interval": 10
+    }
+  },
+  "lifecycle": {
+    "build": "pip install -r backend/requirements.txt",
+    "start": "python backend/main.py"
+  },
+  "projectId": "87b97f7b-28da-4e96-a99d-5c5d01e8ec8a",
+  "services": [
+    {
+      "name": "backend",
+      "path": "backend",
+      "type": "backend"
+    }
+  ]
 }

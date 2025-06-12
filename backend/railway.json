@@ -1,9 +1,0 @@
-{
-  "build": {
-    "env": "python",
-    "command": "pip install -r backend/requirements.txt"
-  },
-  "start": {
-    "command": "python backend/main.py"
-  }
-}
