@@ -2,16 +2,20 @@
   "$schema": "https://docs.railway.app/railway.schema.json",
   "build": {
     "builder": "NIXPACKS",
-    "include": ["backend/"], // Explicitly only include the backend folder
-    "exclude": [ // Explicitly exclude known frontend/root-level files
+    "include": ["backend/"],
+    "exclude": [
       "public/",
       "src/",
       "node_modules/",
       "package.json",
       "package-lock.json",
+      "yarn.lock",
       ".gitignore",
-      "README.md"
-      // Add any other root-level files that are part of your frontend
+      "README.md",
+      "*.js",
+      "*.ts",
+      "*.jsx",
+      "*.tsx"
     ]
   },
   "deploy": {
@@ -23,14 +27,14 @@
     }
   },
   "lifecycle": {
-    "build": "pip install -r backend/requirements.txt", 
-    "start": "python backend/main.py"                  
+    "build": "pip install -r requirements.txt",
+    "start": "python main.py"
   },
-  "projectId": "87b97f7b-28da-4e96-a99d-5c5d01e8ec8a", 
+  "projectId": "87b97f7b-28da-4e96-a99d-5c5d01e8ec8a",
   "services": [
     {
       "name": "backend",
-      "path": "backend", 
+      "path": "backend",
       "type": "backend"
     }
   ]
