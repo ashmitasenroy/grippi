@@ -1,23 +1,31 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect, useState } from "react";
+import FilterDropdown from "./components/FilterDropdown";
+import CampaignTable from "./components/CampaignTable";
+import "./App.css";
 
 function App() {
+  const [campaigns, setCampaigns] = useState([]);
+  const [filter, setFilter] = useState("All");
+
+  useEffect(() => {
+    fetch("http://localhost:8000/campaigns")
+      .then((res) => res.json())
+      .then((data) => setCampaigns(data))
+      .catch((error) => console.error("Error fetching campaigns:", error));
+  }, []);
+
+  const filteredCampaigns =
+    filter === "All"
+      ? campaigns
+      : campaigns.filter((c) => c.status === filter);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="app-container">
+      <h1> Campaign Analytics Dashboard</h1>
+      <div className="dashboard-card">
+        <FilterDropdown filter={filter} setFilter={setFilter} />
+        <CampaignTable campaigns={filteredCampaigns} />
+      </div>
     </div>
   );
 }
