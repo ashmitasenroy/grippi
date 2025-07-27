@@ -6,7 +6,6 @@ Grippi is a full-stack web application designed to help marketers track and visu
 <!-- [![Live Demo](https://img.shields.io/badge/Live-Demo-brightgreen?style=for-the-badge)](https://your-grippi-demo-link.com/) -->
 
 <!-- Add a screenshot of your dashboard here! It makes a huge difference. -->
-![Grippi Dashboard Screenshot](./assets/grippi-screenshot.png)
 
 ---
 
