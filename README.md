@@ -1,10 +1,88 @@
-## API Reference
+# Grippi - Full-Stack Campaign Analytics Dashboard
+
+Grippi is a full-stack web application designed to help marketers track and visualize the performance of their campaigns. It provides a clean, intuitive dashboard to monitor key metrics, offering insights at a glance.
+
+<!-- Add a link to your live demo if you have one -->
+<!-- [![Live Demo](https://img.shields.io/badge/Live-Demo-brightgreen?style=for-the-badge)](https://your-grippi-demo-link.com/) -->
+
+<!-- Add a screenshot of your dashboard here! It makes a huge difference. -->
+![Grippi Dashboard Screenshot](./assets/grippi-screenshot.png)
+
+---
+
+### 🎯 Project Purpose & Motivation
+
+In many scenarios, campaign data is scattered across different platforms, making it difficult to get a clear, consolidated view of performance. I built Grippi to solve this problem by creating a single source of truth—a user-friendly dashboard that fetches data from a central backend service and presents it in a clean, visual format.
+
+---
+
+### 🛠️ Tech Stack
+
+This project is a full-stack application with a React frontend and a Python backend.
+
+#### **Frontend:**
+*   **Framework:** React.js
+*   **Styling:** CSS / Material-UI *(<-- Replace with what you used)*
+*   **Data Fetching:** Axios / Fetch API
+
+#### **Backend:**
+*   **Framework:** Python with FastAPI
+*   **Database:** SQLite / MySQL *(<-- Replace with what you used)*
+
+---
+
+### ✨ Features
+
+- **Data Visualization:** Clean charts and graphs to visualize key campaign metrics like clicks, conversions, and budget.
+- **Campaign Overview:** A central table displaying all campaigns with their current status and performance data.
+- **Responsive Design:** A mobile-friendly layout that ensures the dashboard is usable on any device.
+- **RESTful API:** A well-defined backend API to serve campaign data to the frontend.
+
+---
+
+### 🚀 Running Locally
+
+To run this project on your local machine, you will need to run both the frontend (this repository) and the backend service.
+
+1.  **Clone the repository:**
+    ```sh
+    git clone https://github.com/ashmitasenroy/grippi.git
+    ```
+
+2.  **Navigate into the project directory:**
+    ```sh
+    cd grippi
+    ```
+
+3.  **Install dependencies:**
+    ```sh
+    npm install
+    ```
+
+4.  **Set up environment variables:**
+    The frontend needs to know the URL of your backend API. Create a new file in the root of the project named `.env.local` and add the following line:
+    ```
+    REACT_APP_API_URL=http://localhost:8000
+    ```
+    *(Note: Adjust the port if your backend runs on a different one.)*
+
+5.  **Start the development server:**
+    ```sh
+    npm start
+    ```
+    The application will open automatically at `http://localhost:3000`.
+
+---
+
+### 🔌 API Reference
+
+*(This is where the excellent API Reference section you already wrote should go. I've included it below to make this a complete template.)*
 
 This section documents the core endpoints for the Grippi backend service.
 
 ---
 
-### Get All Campaigns
+#### Get All Campaigns
 
 *   `GET /api/campaigns`
 
@@ -32,86 +110,3 @@ Fetches a summary of all marketing campaigns.
     "budget": 7500
   }
 ]
-
-
-
-
-
-
-
-
-
-
-
-
-
-# Getting Started with Create React App
-
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
-## Available Scripts
-
-In the project directory, you can run:
-
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
