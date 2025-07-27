@@ -36,9 +36,9 @@ The core of Grippi is its relational database. I chose **SQLite** because it's a
 
 #### **Entity-Relationship Diagram (ERD)**
 
-This diagram illustrates the relationships between the database tables. GitHub will automatically render this Mermaid.js code.
+This diagram illustrates the relationships between the database tables. .
 
-```mermaid
+```
 erDiagram
     CAMPAIGNS {
         int id PK "Campaign ID"
