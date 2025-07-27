@@ -1,3 +1,50 @@
+## API Reference
+
+This section documents the core endpoints for the Grippi backend service.
+
+---
+
+### Get All Campaigns
+
+*   `GET /api/campaigns`
+
+Fetches a summary of all marketing campaigns.
+
+**Query Parameters:**
+
+| Parameter | Type   | Description                                                        |
+| :-------- | :----- | :----------------------------------------------------------------- |
+| `status`  | String | **Optional**. Filters campaigns by status (e.g., 'active', 'completed'). |
+
+**Example Response (`200 OK`):**
+```json
+[
+  {
+    "id": 1,
+    "name": "Summer Sale 2024",
+    "status": "active",
+    "budget": 5000
+  },
+  {
+    "id": 2,
+    "name": "Winter Launch",
+    "status": "completed",
+    "budget": 7500
+  }
+]
+
+
+
+
+
+
+
+
+
+
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
